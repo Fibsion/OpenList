@@ -19,11 +19,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull source image
-        run: docker pull openlistteam/openlist:latest      #别人的镜像  hslr/sun-panel:latest
+        run: docker pull ghcr.io/wpjdzh/hf-wangpan-ol:latest      #别人的镜像  hslr/sun-panel:latest
 
       - name: Re-tag
         run: |
-          docker tag openlistteam/openlist:latest ghcr.io/${{ github.actor }}/hf-wanpan-1:latest   #记得改别人的和自己的 
+          docker tag ghcr.io/wpjdzh/hf-wangpan-ol:latest ghcr.io/${{ github.actor }}/hf-wanpan-1:latest   #记得改别人的和自己的 
 
       - name: Push to GHCR
         run: docker push ghcr.io/${{ github.actor }}/hf-wanpan-1:latest     #改成自己喜欢的名字hf-sunpanel
